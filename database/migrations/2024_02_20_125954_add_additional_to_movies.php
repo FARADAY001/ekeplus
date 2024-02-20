@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('title')->nullable();
             $table->longText('description')->nullable();
             $table->string('country')->nullable();
-            $table->longText('actor')->nullable();
+            $table->longText('actors')->nullable();
             $table->string('actor_image')->nullable();
             $table->string('producer')->nullable();
             $table->string('producer_image')->nullable();

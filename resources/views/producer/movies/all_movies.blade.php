@@ -15,7 +15,7 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-           <a href="{{ route('add.category') }}" class="btn btn-primary px-5">Ajouter vidéo </a>
+           <a href="{{ route('add.movie') }}" class="btn btn-primary px-5">Ajouter vidéo </a>
             </div>
         </div>
     </div>
@@ -31,6 +31,7 @@
                             <th>Categorie</th>
                             <th>Vidéos</th>
                             <th>Date d'ajout</th>
+                            <th>Vues</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@
                             <td>{{ $item->category_id }}</td>
                             <td>{{ $item->video }}</td>
                             <td>{{ $item->created_at }}</td>
+                            <td></td>
                             <td>
                             <a href="{{ route('edit.category',$item->id) }}" class="btn btn-info px-5">Modifier </a>
                             <!--
