@@ -22,7 +22,7 @@
         <div class="card-body p-4">
             <h5 class="mb-4">Ajouter Vidéo</h5>
 
-            <form id="myForm" action="{{ route('store.category') }}" method="post" class="row g-3" enctype="multipart/form-data">
+            <form id="myForm" action="{{ route('store.movie') }}" method="post" class="row g-3" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group col-md-6">
@@ -72,7 +72,7 @@
                     <label for="input1" class="form-label"> Bande Annonce </label>
                     <input type="file" name="trailer" class="form-control"  accept="video/mp4, video/webm" >
                 </div>
-                
+
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label">Durée </label>
                     <input type="text" name="duration" class="form-control" id="input1"  >
@@ -94,7 +94,7 @@
                 <textarea name="description" class="form-control" id="input11" placeholder="Description du film" rows="3"></textarea>
             </div>
 
-            <!-- 
+            <!--
 
             <div class="form-group col-md-12">
                 <label for="input1" class="form-label"> Description </label>
@@ -123,20 +123,20 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                category_name: {
+                title: {
                     required : true,
                 },
-                image: {
+                country: {
                     required : true,
                 },
 
             },
             messages :{
-                category_name: {
-                    required : 'Veuillez saisir le nom de la catégorie',
+                title: {
+                    required : 'Veuillez saisir le titre',
                 },
-                image: {
-                    required : 'Veuillez sélectionner une image',
+                country: {
+                    required : 'Veuillez saisir le pays',
                 },
 
             },

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Carbon\Carbon;
 use App\Models\Movies;
+use Nette\Utils\Image;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 
 class MovieController extends Controller
 {
@@ -31,21 +32,48 @@ class MovieController extends Controller
 
         $request->validate([
             'video' => 'required|mimes:mp4|max:10000',
+            'trailer' => 'required|mimes:mp4|max:1000',
         ]);
 
-        $image = $request->file('movie_image');  
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(370,246)->save('upload/movie/thambnail/'.$name_gen);
-        $save_url = 'upload/movie/thambnail/'.$name_gen;
+        $actor_image = $request->file('actor_image');
+        $actor_image_name_gen = hexdec(uniqid()).'.'.$actor_image->getClientOriginalExtension();
+        Image::make($actor_image)->resize(370,246)->save('upload/movie/actor_image/'.$actor_image);
+        $actor_image_save_url = 'upload/movie/actor_image/'.$actor_image_name_gen;
 
+        $producer_image = $request->file('producer_image');
+        $producer_image_name_gen = hexdec(uniqid()).'.'.$producer_image->getClientOriginalExtension();
+        Image::make($producer_image)->resize(370,246)->save('upload/movie/producer_image/'.$producer_image);
+        $producer_image_save_url = 'upload/movie/producer_image/'.$producer_image_name_gen;
+
+        $movie_logo = $request->file('movie_logo');
+        $movie_logo_name_gen = hexdec(uniqid()).'.'.$movie_logo->getClientOriginalExtension();
+        Image::make($movie_logo)->resize(370,246)->save('upload/movie/movie_logo/'.$movie_logo);
+        $movie_logo_save_url = 'upload/movie/movie_logo/'.$movie_logo_name_gen;
+
+        $landscape_image = $request->file('landscape_image');
+        $landscape_image_name_gen = hexdec(uniqid()).'.'.$landscape_image->getClientOriginalExtension();
+        Image::make($landscape_image)->resize(370,246)->save('upload/movie/landscape_image/'.$landscape_image);
+        $landscape_image_save_url = 'upload/movie/landscape_image/'.$landscape_image_name_gen;
+
+        $portrait_image = $request->file('portrait_image');
+        $portrait_image_name_gen = hexdec(uniqid()).'.'.$portrait_image->getClientOriginalExtension();
+        Image::make($actor_image)->resize(370,246)->save('upload/movie/portrait_image/'.$portrait_image);
+        $portrait_image_save_url = 'upload/movie/portrait_image/'.$portrait_image_name_gen;
+
+        //
         $video = $request->file('video');
         $videoName = time().'.'.$video->getClientOriginalExtension();
         $video->move(public_path('upload/movie/video/'),$videoName);
         $save_video = 'upload/movie/video/'.$videoName;
 
+        $trailer = $request->file('trailer');
+        $trailerName = time().'.'.$trailer->getClientOriginalExtension();
+        $video->move(public_path('upload/movie/video/'),$trailerName);
+        $save_trailer = 'upload/movie/video/'.$videoName;
+
     }// End Method
 
 
-    
+
 
 }

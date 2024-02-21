@@ -79,6 +79,7 @@ Route::middleware(['auth', 'roles:producer'])->group(function(){
     Route::controller(MovieController::class)->group(function(){
         Route::get('/all/movie','AllMovie')->name('all.movie');
         Route::get('/add/movie','AddMovie')->name('add.movie');
+        Route::post('/store/movie','StoreMovie')->name('store.movie');
     });
 
 
