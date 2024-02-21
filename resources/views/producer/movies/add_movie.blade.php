@@ -72,7 +72,11 @@
                     <label for="input1" class="form-label"> Bande Annonce </label>
                     <input type="file" name="trailer" class="form-control"  accept="video/mp4, video/webm" >
                 </div>
-
+                
+                <div class="form-group col-md-6">
+                    <label for="input1" class="form-label">Durée </label>
+                    <input type="text" name="duration" class="form-control" id="input1"  >
+                </div>
 
             <div class="form-group col-md-6">
                 <label for="input1" class="form-label">Catégorie du film </label>
@@ -81,13 +85,7 @@
                     @foreach ($categories as $cat)
                     <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
                     @endforeach
-
                 </select>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="input1" class="form-label">Durée </label>
-                <input type="text" name="duration" class="form-control" id="input1"  >
             </div>
 
 
@@ -96,6 +94,14 @@
                 <textarea name="description" class="form-control" id="input11" placeholder="Description du film" rows="3"></textarea>
             </div>
 
+            <!-- 
+
+            <div class="form-group col-md-12">
+                <label for="input1" class="form-label"> Description </label>
+                <textarea name="description" class="form-control" id="myeditorinstance"></textarea>
+            </div>
+
+            -->
 
 
                 <div class="col-md-12">
@@ -127,10 +133,10 @@
             },
             messages :{
                 category_name: {
-                    required : 'Please Enter Category Name',
+                    required : 'Veuillez saisir le nom de la catégorie',
                 },
                 image: {
-                    required : 'Please Select Category Image',
+                    required : 'Veuillez sélectionner une image',
                 },
 
             },
@@ -161,4 +167,5 @@
         });
     });
 </script>
+
 @endsection
