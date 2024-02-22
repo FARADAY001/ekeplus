@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use Carbon\Carbon;
 use App\Models\Movies;
-use Nette\Utils\Image;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,6 +35,13 @@ class MovieController extends Controller
             'video' => 'required|mimes:mp4|max:10000',
             'trailer' => 'required|mimes:mp4|max:1000',
         ]);
+
+        if($request->file('image')){
+            $manager = new ImageManager(new Driver());
+
+            $actor_image_name_gen = hexdec(uniqid()).'.'.$request->file()->getClientOriginalExtension();
+
+        }
 
         $actor_image = $request->file('actor_image');
         $actor_image_name_gen = hexdec(uniqid()).'.'.$actor_image->getClientOriginalExtension();
