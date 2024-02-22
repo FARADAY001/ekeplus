@@ -31,6 +31,10 @@
                 <li> <a href="{{ route('all.category') }}"><i class='bx bx-radio-circle'></i>Toutes les catégories </a>
                 </li>
             </ul>
+            <ul>
+                <li> <a href="{{ route('all.country') }}"><i class='bx bx-radio-circle'></i>Tous les pays </a>
+                </li>
+            </ul>
 
         </li>
 

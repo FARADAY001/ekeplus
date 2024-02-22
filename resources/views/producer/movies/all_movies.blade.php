@@ -28,11 +28,12 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>Categorie</th>
                             <th>Vidéos</th>
                             <th>Date d'ajout</th>
                             <th>Vues</th>
+                            <!-- 
                             <th>Action</th>
+                            -->
                         </tr>
                     </thead>
                     <tbody>
@@ -40,16 +41,22 @@
                         @foreach ($movies as $key=> $item)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $item->category_id }}</td>
-                            <td>{{ $item->video }}</td>
+                            <!-- -->
+                            <td>
+                            <video width="200" height="70" controls>
+                                <source src="{{ $item->video }}" type="video/ogg">  <source src="{{ $item->video }}" type=video/avi>   <source src="{{ $item->video }}" type="video/mp4, video/avi, video/webm, video/ogg">
+                            </video>
+                            </td>
                             <td>{{ $item->created_at }}</td>
                             <td></td>
+                            <!--
                             <td>
                             <a href="{{ route('edit.category',$item->id) }}" class="btn btn-info px-5">Modifier </a>
-                            <!--
+                            
                             <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger px-5" id="delete">Supprimer </a>
-                            -->
+                            
                             </td>
+                            -->
                         </tr>
                         @endforeach
 

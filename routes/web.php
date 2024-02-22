@@ -7,6 +7,7 @@ use App\Http\Controllers\ProducerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\MovieController;
+use App\Http\Controllers\Backend\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,16 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
     Route::post('/update/category','UpdateCategory')->name('update.category');
     Route::get('/delete/category/{id}','DeleteCategory')->name('delete.category');
     });
+
+    // Country All Route
+    Route::controller(CountryController::class)->group(function(){
+        Route::get('/all/country','AllCountry')->name('all.country');
+        Route::get('/add/country','AddCountry')->name('add.country');
+        Route::post('/store/country','StoreCountry')->name('store.country');
+        Route::get('/edit/country/{id}','EditCountry')->name('edit.country');
+        Route::post('/update/country','UpdateCountry')->name('update.country');
+        Route::get('/delete/country/{id}','DeleteCountry')->name('delete.country');
+        });
 
 }); // End Admin Group Middleware
 

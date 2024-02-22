@@ -35,10 +35,6 @@
                     <input type="text" name="actors" class="form-control" id="input1"  >
                 </div>
 
-                <div class="form-group col-md-6">
-                    <label for="input1" class="form-label">Pays </label>
-                    <input type="text" name="country" class="form-control" id="input1"  >
-                </div>
 
                 <div class="form-group col-md-6">
                     <label for="input2" class="form-label"> Image des acteurs  </label>
@@ -73,7 +69,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label"> Vidéo </label>
-                    <input type="file" name="video" class="form-control"  accept="video/mp4, video/webm" >
+                    <input type="file" name="video" class="form-control"  accept="video/mp4, video/webm, video/avi, video/ovg " >
                 </div>
 
 
@@ -93,6 +89,16 @@
                     <option selected="" disabled>Ouvrir le menu</option>
                     @foreach ($categories as $cat)
                     <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="input1" class="form-label">Pays </label>
+                <select name="country_id" class="form-select mb-3" aria-label="Default select example">
+                    <option selected="" disabled>Ouvrir le menu</option>
+                    @foreach ($countries as $cat)
+                    <option value="{{ $cat->id }}">{{ $cat->country_id }}</option>
                     @endforeach
                 </select>
             </div>
@@ -135,17 +141,11 @@
                 title: {
                     required : true,
                 },
-                country: {
-                    required : true,
-                },
 
             },
             messages :{
                 title: {
                     required : 'Veuillez saisir le titre',
-                },
-                country: {
-                    required : 'Veuillez saisir le pays',
                 },
 
             },

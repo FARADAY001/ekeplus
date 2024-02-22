@@ -9,6 +9,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
@@ -25,7 +26,11 @@ class MovieController extends Controller
     public function AddMovie(){
 
         $categories = Category::latest()->get();
-        return view('producer.movies.add_movie',compact('categories'));
+        //return view('producer.movies.add_movie',compact('categories'));
+        
+        $countries = Country::latest()->get();
+
+        return view('producer.movies.add_movie',compact('categories', 'countries' ));
 
     }// End Method
 
@@ -129,6 +134,7 @@ class MovieController extends Controller
         Movies::insertGetId([
 
             'category_id' => $request->category_id,
+            'country_id' => $request->country_id,
             'producer_id' => Auth::user()->id,
             'title' => $request->title,
             'actors' => $request->actors,

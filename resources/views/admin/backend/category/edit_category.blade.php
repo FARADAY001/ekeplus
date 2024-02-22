@@ -10,7 +10,7 @@
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Modifier catégorie</li>
+                    <li class="breadcrumb-item active" aria-current="page">Modifier pays</li>
                 </ol>
             </nav>
         </div>
@@ -20,16 +20,16 @@
 
     <div class="card">
         <div class="card-body p-4">
-            <h5 class="mb-4">Modifier catégorie</h5>
+            <h5 class="mb-4">Modifier pays</h5>
 
-            <form id="myForm" action="{{ route('update.category') }}" method="post" class="row g-3" enctype="multipart/form-data">
+            <form id="myForm" action="{{ route('update.country') }}" method="post" class="row g-3" enctype="multipart/form-data">
                 @csrf
 
-                <input type="hidden" name="id" value="{{ $category->id }}">
+                <input type="hidden" name="id" value="{{ $country->id }}">
 
                 <div class="form-group col-md-6">
-                    <label for="input1" class="form-label">Nom catégory</label>
-                    <input type="text" name="category_name" class="form-control" id="input1" value="{{ $category->category_name }}"  >
+                    <label for="input1" class="form-label">Nom pays</label>
+                    <input type="text" name="country_name" class="form-control" id="input1" value="{{ $country->country_name }}" >
                 </div>
 
                 <div class="col-md-6">
