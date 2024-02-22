@@ -104,7 +104,7 @@
     toastr.error(" {{ Session::get('message') }} ");
     break; 
  }
- @endif 
+ @endif  
 </script>
 
 <!--Datatable-->

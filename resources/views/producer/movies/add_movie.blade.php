@@ -61,6 +61,15 @@
                     <input class="form-control" name="movie_logo" type="file" id="image">
                 </div>
 
+                <div class="form-group col-md-6">
+                    <label for="input2" class="form-label"> image test1 </label>
+                    <input class="form-control" name="portrait_image" type="file" id="image">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="input2" class="form-label"> image test2</label>
+                    <input class="form-control" name="landscape_image" type="file" id="image">
+                </div>
 
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label"> Vidéo </label>
