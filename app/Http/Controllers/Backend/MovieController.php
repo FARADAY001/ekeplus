@@ -69,7 +69,40 @@ class MovieController extends Controller
         $trailer = $request->file('trailer');
         $trailerName = time().'.'.$trailer->getClientOriginalExtension();
         $video->move(public_path('upload/movie/video/'),$trailerName);
-        $save_trailer = 'upload/movie/video/'.$videoName;
+        $save_trailer = 'upload/movie/trailer/'.$trailerName;
+
+        $movie_id = Movies::insertGetId([
+
+            'category_id' => $request->category_id,
+            'producer_id' => Auth::user()->id,
+            'title' => $request->title,
+            'actors' => $request->actors,
+            //'slug' => strtolower(str_replace(' ', '-', $request->movie_name)),
+            'description' => $request->description,
+            'video' => $save_video,
+            'trailer' => $save_trailer,
+
+            'country' => $request->country,
+            'duration' => $request->duration,
+
+            'producer' => $request->producer,
+
+            'actor_image' => $actor_image_save_url,
+            'producer_image' => $producer_image_save_url,
+            'movie_logo' => $movie_logo_save_url,
+            'landscape_image' => $landscape_image_save_url,
+            'portrait_image' => $portrait_image_save_url,
+
+
+            'created_at' => Carbon::now(),
+
+        ]);
+
+        $notification = array(
+            'message' => 'film inséré avec succès',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.movie')->with($notification);
 
     }// End Method
 
