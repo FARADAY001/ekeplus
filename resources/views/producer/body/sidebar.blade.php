@@ -1,7 +1,9 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
+            <!-- 
             <img src="{{ asset('backend/assets/images/') }}" class="logo-icon" alt="logo icon">
+            -->
         </div>
         <div>
             <h4 class="logo-text">Producteur</h4>

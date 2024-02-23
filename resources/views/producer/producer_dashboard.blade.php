@@ -5,8 +5,9 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--favicon-->
+	<!--favicon
 	<link rel="icon" href="{{ asset('backend/assets/images/') }}" type="image/png"/>
+	-->
 	<!--plugins-->
 	<link href="{{ asset('backend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
 	<link href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
