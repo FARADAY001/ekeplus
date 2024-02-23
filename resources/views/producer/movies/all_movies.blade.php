@@ -28,7 +28,7 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            <th>Vidéos</th>
+                            <th>Titre de la vidéo</th>
                             <th>Date d'ajout</th>
                             <th>Vues</th>
                             <!-- 
@@ -41,12 +41,16 @@
                         @foreach ($movies as $key=> $item)
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <!-- -->
+                            <td>
+                                {{ $item->title }} 
+                            </td>
+                            <!-- 
                             <td>
                             <video width="200" height="70" controls>
                                 <source src="{{ $item->video }}" type="video/ogg">  <source src="{{ $item->video }}" type=video/avi>   <source src="{{ $item->video }}" type="video/mp4, video/avi, video/webm, video/ogg">
                             </video>
                             </td>
+                            -->
                             <td>{{ $item->created_at }}</td>
                             <td></td>
                             <!--

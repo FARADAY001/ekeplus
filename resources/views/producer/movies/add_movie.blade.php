@@ -80,7 +80,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label">Durée </label>
-                    <input type="number" name="duration" class="form-control" id="input1"  >
+                    <input type="number" name="duration" class="form-control" id="input1">
                     <label for="input1" class="form-label">Durée </label>
                 </div>
 
