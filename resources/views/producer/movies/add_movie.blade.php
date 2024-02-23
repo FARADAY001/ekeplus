@@ -80,7 +80,8 @@
 
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label">Durée </label>
-                    <input type="text" name="duration" class="form-control" id="input1"  >
+                    <input type="number" name="duration" class="form-control" id="input1"  >
+                    <label for="input1" class="form-label">Durée </label>
                 </div>
 
             <div class="form-group col-md-6">
@@ -98,7 +99,7 @@
                 <select name="country_id" class="form-select mb-3" aria-label="Default select example">
                     <option selected="" disabled>Ouvrir le menu</option>
                     @foreach ($countries as $cat)
-                    <option value="{{ $cat->id }}">{{ $cat->country_id }}</option>
+                    <option value="{{ $cat->id }}">{{ $cat->country_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -118,6 +119,27 @@
 
             -->
 
+            <!--   //////////// Actor Option /////////////// -->
+                    <p></p>
+<!-- 
+                    <div class="row add_item">
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                    <label for="actor" class="form-label"> Noms des acteurs </label>
+                                    <input type="text" name="actors[]" id="actors" class="form-control" placeholder=" Nom acteur ">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6" style="padding-top: 20px;">
+                            <a class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> Ajouter plus...</a>
+                        </div>
+                </div> --> <!---end row-->
+
+            <!--   //////////// End actor Option /////////////// -->
+
+
+
+
 
                 <div class="col-md-12">
                     <div class="d-md-flex d-grid align-items-center gap-3">
@@ -128,11 +150,49 @@
             </form>
         </div>
     </div>
-
-
-
-
 </div>
+
+<!--========== Start of add multiple class with ajax ==============-->
+<!-- 
+<div style="visibility: hidden">
+    <div class="whole_extra_item_add" id="whole_extra_item_add">
+       <div class="whole_extra_item_delete" id="whole_extra_item_delete">
+          <div class="container mt-2">
+             <div class="row">
+
+
+                <div class="form-group col-md-6">
+                   <label for="actor">Acteur</label>
+                   <input type="text" name="actors[]" id="actors" class="form-control" placeholder="Nom acteur  ">
+                </div>
+                <div class="form-group col-md-6" style="padding-top: 20px">
+                      <span class="btn btn-success btn-sm addeventmore"><i class="fa fa-plus-circle">Ajouter</i></span>
+                   <span class="btn btn-danger btn-sm removeeventmore"><i class="fa fa-minus-circle">Supprimer</i></span>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div> 
+-->
+
+<!----For Section-------->
+<script type="text/javascript">
+    $(document).ready(function(){
+       var counter = 0;
+       $(document).on("click",".addeventmore",function(){
+             var whole_extra_item_add = $("#whole_extra_item_add").html();
+             $(this).closest(".add_item").append(whole_extra_item_add);
+             counter++;
+       });
+       $(document).on("click",".removeeventmore",function(event){
+             $(this).closest("#whole_extra_item_delete").remove();
+             counter -= 1
+       });
+    });
+ </script>
+ <!--========== End of add multiple class with ajax ==============-->
+
 
 <script type="text/javascript">
     $(document).ready(function (){
