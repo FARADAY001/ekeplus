@@ -80,8 +80,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label">Durée </label>
-                    <input type="number" name="duration" class="form-control" id="input1">
-                    <label for="input1" class="form-label">Durée </label>
+                    <input id="appt-time" type="time" name="appt-time" step="2" type="text" name="duration" class="form-control" id="input1">
                 </div>
 
             <div class="form-group col-md-6">

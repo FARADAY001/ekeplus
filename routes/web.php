@@ -21,7 +21,13 @@ use App\Http\Controllers\Backend\CountryController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return redirect('/producer/dashboard');
+});
+
+Route::get('/admin', function () {
+    //return view('welcome');
+    return redirect('/admin/dashboard');
 });
 
 Route::get('/dashboard', function () {

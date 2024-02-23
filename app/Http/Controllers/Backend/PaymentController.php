@@ -10,7 +10,7 @@ class PaymentController extends Controller
     //
     public function AllPayment(){
 
-        return view('admin.backend.category.all_category');
+        return view('admin.backend.payment.all_payment');
 
     }// End Method
 
