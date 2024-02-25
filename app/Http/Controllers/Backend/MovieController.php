@@ -38,13 +38,13 @@ class MovieController extends Controller
     public function StoreMovie(Request $request){
 
 
-        
+
         $request->validate([
             'video' => 'required|mimes:mp4|max:1000000',
             'trailer' => 'required|mimes:mp4|max:500000',
         ]);
-        
-        
+
+
         /*
         $request->validate([
             'video' => 'mimetypes:video/avi,video/mpeg,video/quicktime',
@@ -52,18 +52,18 @@ class MovieController extends Controller
         ]);
         */
 
-        
+
 
         /*
         if($request->file('image')){
-            
+
         }
         */
 
-        
 
 
-        if($request->file('actor_imge', 'producer_image', 'movie_logo', 'landscape_image' )){
+
+        if($request->file('actor_imge', 'producer_image', 'movie_logo', 'landscape_image', 'portrait_image' )){
 
             $manager = new ImageManager(new Driver());
 
@@ -94,8 +94,8 @@ class MovieController extends Controller
             $portrait_image_name_gen = hexdec(uniqid()).'.'.$request->file('portrait_image')->getClientOriginalExtension();
             $portrait_image = $manager->read($request->file('portrait_image'));
             $portrait_image = $portrait_image->resize(500,500);
-            $portrait_image->toJpeg(80)->save(base_path('public/upload/movie/portrait_image/'.$landscape_image_name_gen));
-            $portrait_image_save_url = 'upload/movie/landscape_image/'.$portrait_image_name_gen;
+            $portrait_image->toJpeg(80)->save(base_path('public/upload/movie/portrait_image/'.$portrait_image_name_gen));
+            $portrait_image_save_url = 'upload/movie/portrait_image/'.$portrait_image_name_gen;
 
             $video = $request->file('video');
             $videoName = time().'.'.$video->getClientOriginalExtension();
@@ -118,28 +118,28 @@ class MovieController extends Controller
                 'description' => $request->description,
                 'video' => $save_video,
                 'trailer' => $save_trailer,
-    
+
                 //'country' => $request->country,
                 'duration' => $request->duration,
-    
+
                 'producer' => $request->producer,
-    
+
                 'actor_image' => $actor_image_save_url,
                 'producer_image' => $producer_image_save_url,
                 'movie_logo' => $movie_logo_save_url,
                 'landscape_image' => $landscape_image_save_url,
                 'portrait_image' => $portrait_image_save_url,
-    
-    
+
+
                 'created_at' => Carbon::now(),
-    
+
             ]);
-            
-            // Course Goals Add Form 
+
+            // Course Goals Add Form
             /*
             $actors = Count($request->actors);
             if ($actors != NULL) {
-                for ($i=0; $i < $actors; $i++) { 
+                for ($i=0; $i < $actors; $i++) {
                     $gcount = new Actor();
                     $gcount->movie_id = $movie_id;
                     $gcount->actor_name = $request->actors[$i];
@@ -147,7 +147,7 @@ class MovieController extends Controller
                 }
             }
             */
-            /// End Course Goals Add Form 
+            /// End Course Goals Add Form
 
         }
 
@@ -188,7 +188,7 @@ class MovieController extends Controller
         $portrait_image = $portrait_image->resize(500,500);
         $portrait_image->toJpeg(80)->save(base_path('public/upload/movie/portrait_image/'.$landscape_image_name_gen));
         $portrait_image_save_url = 'upload/movie/landscape_image/'.$portrait_image_name_gen;
-           
+
         //
         $video = $request->file('video');
         $videoName = time().'.'.$video->getClientOriginalExtension();
@@ -199,11 +199,11 @@ class MovieController extends Controller
         $trailerName = time().'.'.$trailer->getClientOriginalExtension();
         $trailer->move(public_path('upload/movie/trailer/'),$trailerName);
         $save_trailer = 'upload/movie/trailer/'.$trailerName;
-        
+
          */
 
         //dd("test");
-        
+
         /*
         $movie_id = Movies::insertGetId([
 
@@ -233,8 +233,8 @@ class MovieController extends Controller
 
         ]);
         */
-        
-        
+
+
         /*
         $movie_id = Movies::insertGetId([
 
@@ -262,20 +262,20 @@ class MovieController extends Controller
 
             'created_at' => Carbon::now(),
 
-        ]); 
+        ]);
 
-        // Course Goals Add Form 
+        // Course Goals Add Form
 
         $actors = Count($request->actors);
         if ($actors != NULL) {
-            for ($i=0; $i < $actors; $i++) { 
+            for ($i=0; $i < $actors; $i++) {
                 $gcount = new Actor();
                 $gcount->movie_id = $movie_id;
                 $gcount->actor_name = $request->actors[$i];
                 $gcount->save();
             }
         }
-        /// End Course Goals Add Form 
+        /// End Course Goals Add Form
 
         */
 
