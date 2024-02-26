@@ -18,6 +18,13 @@
            <a href="{{ route('add.movie') }}" class="btn btn-primary px-5">Ajouter vidéo </a>
             </div>
         </div>
+        <!-- 
+        <div class="ms-auto">
+            <div class="btn-group">
+           <a href="{{ route('add.up') }}" class="btn btn-primary px-5">Ajouter test </a>
+            </div>
+        </div>
+        -->
     </div>
     <!--end breadcrumb-->
 

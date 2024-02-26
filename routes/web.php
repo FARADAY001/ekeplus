@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\MovieController;
 use App\Http\Controllers\Backend\CountryController;
+use App\Http\Controllers\Backend\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +98,12 @@ Route::middleware(['auth', 'roles:producer'])->group(function(){
         Route::get('/all/movie','AllMovie')->name('all.movie');
         Route::get('/add/movie','AddMovie')->name('add.movie');
         Route::post('/store/movie','StoreMovie')->name('store.movie');
+    });
+
+    // test
+    Route::controller(UploadController::class)->group(function(){
+        Route::get('/add/up','AddUp')->name('add.up');
+        Route::post('/store/up','storeUp')->name('store.up');
     });
 
 
