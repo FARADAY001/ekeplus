@@ -88,7 +88,7 @@
             -->
             <div class="col-12">
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                    <button type="submit" class="btn" style="background-color: #f67f00;">Se connecter</button>
                 </div>
             </div>
             <div class="col-12">
