@@ -8,13 +8,12 @@
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                    <li class="breadcrumb-item" ><a href="javascript:;" ><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Ajouter Vidéo</li>
+                    <li class="breadcrumb-item active" aria-current="page">Ajouter Vidéo  </li>
                 </ol>
             </nav>
         </div>
-
     </div>
     <!--end breadcrumb-->
 
@@ -22,8 +21,22 @@
         <div class="card-body p-4">
             <h5 class="mb-4">Ajouter Vidéo</h5>
 
-            <form id="myForm" action="{{ route('store.movie') }}" method="post" class="row g-3" enctype="multipart/form-data">
+            
+
+            <form id="myForm" id="loading" action="{{ route('store.movie') }}" method="post" class="row g-3" enctype="multipart/form-data">
                 @csrf
+
+                <div id="loader" class="d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="progress mt-3">
+                        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p>Loading...</p>
+                </div>
+
+                
 
                 <div class="form-group col-md-6">
                     <label for="input1" class="form-label">Titre de la vidéo</label>
@@ -38,7 +51,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="input2" class="form-label"> Image des acteurs  </label>
-                    <input class="form-control" name="actor_image" type="file" id="image">
+                    <input class="form-control" name="actor_image" type="file" id="image" accept="image/*" >
                 </div>
 
                 <div class="form-group col-md-6">
@@ -49,22 +62,22 @@
 
                 <div class="form-group col-md-6">
                     <label for="input2" class="form-label"> Image du producteur </label>
-                    <input class="form-control" name="producer_image" type="file" id="image">
+                    <input class="form-control" name="producer_image" type="file" id="image" accept="image/*" >
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="input2" class="form-label"> Logo du film </label>
-                    <input class="form-control" name="movie_logo" type="file" id="image">
+                    <input class="form-control" name="movie_logo" type="file" id="image" accept="image/*" >
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="input2" class="form-label"> image test1 </label>
-                    <input class="form-control" name="portrait_image" type="file" id="image">
+                    <label for="input2" class="form-label"> image en portrait </label>
+                    <input class="form-control" name="portrait_image" type="file" id="image" accept="image/*" >
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="input2" class="form-label"> image test2</label>
-                    <input class="form-control" name="landscape_image" type="file" id="image">
+                    <label for="input2" class="form-label"> image en paysage</label>
+                    <input class="form-control" name="landscape_image" type="file" id="image" accept="image/*" >
                 </div>
 
                 <div class="form-group col-md-6">
@@ -109,40 +122,9 @@
                 <textarea name="description" class="form-control" id="input11" placeholder="Description du film" rows="3"></textarea>
             </div>
 
-            <!--
-
-            <div class="form-group col-md-12">
-                <label for="input1" class="form-label"> Description </label>
-                <textarea name="description" class="form-control" id="myeditorinstance"></textarea>
-            </div>
-
-            -->
-
-            <!--   //////////// Actor Option /////////////// -->
-                    <p></p>
-<!-- 
-                    <div class="row add_item">
-
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                    <label for="actor" class="form-label"> Noms des acteurs </label>
-                                    <input type="text" name="actors[]" id="actors" class="form-control" placeholder=" Nom acteur ">
-                            </div>
-                        </div>
-                        <div class="form-group col-md-6" style="padding-top: 20px;">
-                            <a class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> Ajouter plus...</a>
-                        </div>
-                </div> --> <!---end row-->
-
-            <!--   //////////// End actor Option /////////////// -->
-
-
-
-
-
                 <div class="col-md-12">
                     <div class="d-md-flex d-grid align-items-center gap-3">
-          <button type="submit" class="btn btn-primary px-4">Enregistrer</button>
+          <button type="submit" id="submitBtn" style="background-color: #f67f00;" class="btn px-4">Enregistrer</button>
 
                     </div>
                 </div>
@@ -151,31 +133,8 @@
     </div>
 </div>
 
-<!--========== Start of add multiple class with ajax ==============-->
-<!-- 
-<div style="visibility: hidden">
-    <div class="whole_extra_item_add" id="whole_extra_item_add">
-       <div class="whole_extra_item_delete" id="whole_extra_item_delete">
-          <div class="container mt-2">
-             <div class="row">
 
 
-                <div class="form-group col-md-6">
-                   <label for="actor">Acteur</label>
-                   <input type="text" name="actors[]" id="actors" class="form-control" placeholder="Nom acteur  ">
-                </div>
-                <div class="form-group col-md-6" style="padding-top: 20px">
-                      <span class="btn btn-success btn-sm addeventmore"><i class="fa fa-plus-circle">Ajouter</i></span>
-                   <span class="btn btn-danger btn-sm removeeventmore"><i class="fa fa-minus-circle">Supprimer</i></span>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
- </div> 
--->
-
-<!----For Section-------->
 <script type="text/javascript">
     $(document).ready(function(){
        var counter = 0;
@@ -235,5 +194,98 @@
         });
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#loading').submit(function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var form = $(this);
+            var progressBar = $('#progressBar');
+            $('#submitBtn').prop('disabled', true); // Disable the submit button to prevent multiple submissions
+            $('#loader').removeClass('d-none'); // Show the loader
+
+            // Start updating the progress bar
+            var progress = 0;
+            var interval = setInterval(function() {
+                progress += 5; // Increment the progress bar
+                progressBar.css('width', progress + '%').attr('aria-valuenow', progress);
+                if (progress >= 100) {
+                    clearInterval(interval); // Stop the progress when it reaches 100%
+                }
+            }, 500); // Adjust the interval as needed
+
+            $.ajax({
+                url: form.attr('action'),
+                type: form.attr('method'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // Handle success response here if needed
+                    console.log(response);
+                    clearInterval(interval); // Stop the progress when the response is received
+                    $('#loader').addClass('d-none'); // Hide the loader
+                    $('#submitBtn').prop('disabled', false); // Enable the submit button
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response here if needed
+                    console.error(xhr.responseText);
+                    clearInterval(interval); // Stop the progress in case of an error
+                    $('#loader').addClass('d-none'); // Hide the loader
+                    $('#submitBtn').prop('disabled', false); // Enable the submit button
+                }
+            });
+        });
+    });
+</script>
+
+
+<!-- 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#loading').submit(function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var form = $(this);
+            var progressBar = $('#progressBar');
+            $('#submitBtn').prop('disabled', true); // Disable the submit button to prevent multiple submissions
+            $('#loader').removeClass('d-none'); // Show the loader
+
+            $.ajax({
+                url: form.attr('action'),
+                type: form.attr('method'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                xhr: function() {
+                    var xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', function(evt) {
+                        if (evt.lengthComputable) {
+                            var percentComplete = (evt.loaded / evt.total) * 100;
+                            progressBar.css('width', percentComplete + '%');
+                            if (percentComplete === 100) {
+                                // Hide the loader and enable the submit button when the loading is complete
+                                $('#loader').addClass('d-none');
+                                $('#submitBtn').prop('disabled', false);
+                            }
+                        }
+                    }, false);
+                    return xhr;
+                },
+                success: function(response) {
+                    // Handle success response here if needed
+                    console.log(response);
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response here if needed
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+
+-->
+
+
 
 @endsection

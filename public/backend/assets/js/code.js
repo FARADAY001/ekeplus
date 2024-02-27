@@ -9,7 +9,7 @@ $(function(){
                     text: "Êtes-vous sûr  ?",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#f67f00',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Oui, supprimer!'
                   }).then((result) => {

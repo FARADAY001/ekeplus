@@ -15,9 +15,10 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-           <a href="{{ route('add.movie') }}" class="btn btn-primary px-5">Ajouter vidéo </a>
+           <a href="{{ route('add.movie') }}" class="btn px-5" style="background-color: #f67f00;" >Ajouter vidéo </a>
             </div>
         </div>
+         
         <!-- 
         <div class="ms-auto">
             <div class="btn-group">
@@ -25,6 +26,7 @@
             </div>
         </div>
         -->
+        
     </div>
     <!--end breadcrumb-->
 

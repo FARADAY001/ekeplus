@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Actor;
 use App\Models\Country;
 use Illuminate\Support\Facades\Auth;
+use Laravel\laravelupload\Facades\laravelupload;
 
 class MovieController extends Controller
 {
@@ -38,12 +39,57 @@ class MovieController extends Controller
     public function StoreMovie(Request $request){
 
 
-
+        
         $request->validate([
             'video' => 'required|mimes:mp4|max:1000000',
             'trailer' => 'required|mimes:mp4|max:500000',
         ]);
+        
+        /*
+        $request->validate([
+            'video' => 'required|file|mimes:mp4|max:204800', // 200GB max, adjust as needed
+            'trailer' => 'required|file|mimes:mp4|max:204800', // 200GB max, adjust as needed
+            'title' => 'required|string|max:255',
+            'duration' => 'required|integer',
+            'description' => 'nullable|string',
+            'landscape_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust max file size as needed
+            'portrait_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust max file size as needed
 
+        ]);
+        */
+
+        /*
+        if ($request->hasFile('video')) {
+            $file = $request->file('video');
+            $uploadedFile = laravelupload::upload($file);
+            // Enregistrer les détails de la vidéo dans la base de données
+            $video = new Movies();
+            $video->file = $uploadedFile['path'];
+            $video->title = $request->title;
+            $video->duration = $request->duration;
+            $video->description = $request->description;
+    
+            // Upload image1
+            if ($request->hasFile('image1')) {
+                $image1 = $request->file('image1');
+                $uploadedImage1 = $image1->store('images');
+                $video->image1 = $uploadedImage1;
+            }
+    
+            // Upload image2
+            if ($request->hasFile('image2')) {
+                $image2 = $request->file('image2');
+                $uploadedImage2 = $image2->store('images');
+                $video->image2 = $uploadedImage2;
+            }
+    
+            $video->save();
+    
+            return redirect()->back()->with('success', 'Video uploaded successfully.');
+        }
+    
+        return redirect()->back()->with('error', 'Failed to upload video.');
+        */
 
         /*
         $request->validate([
@@ -60,9 +106,8 @@ class MovieController extends Controller
         }
         */
 
-
-
-
+/// 
+        
         if($request->file('actor_imge', 'producer_image', 'movie_logo', 'landscape_image', 'portrait_image' )){
 
             $manager = new ImageManager(new Driver());
@@ -134,7 +179,7 @@ class MovieController extends Controller
                 'created_at' => Carbon::now(),
 
             ]);
-
+            
             // Course Goals Add Form
             /*
             $actors = Count($request->actors);
@@ -144,7 +189,7 @@ class MovieController extends Controller
                     $gcount->movie_id = $movie_id;
                     $gcount->actor_name = $request->actors[$i];
                     $gcount->save();
-                }
+                } 
             }
             */
             /// End Course Goals Add Form
@@ -279,15 +324,19 @@ class MovieController extends Controller
 
         */
 
-
+       
+        
 
         $notification = array(
             'message' => 'film inséré avec succès',
             'alert-type' => 'success'
         );
         return redirect()->route('all.movie')->with($notification);
+        
 
     }// End Method
+
+    
 
 
 

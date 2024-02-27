@@ -62,13 +62,13 @@ a {
 	margin-left: 10px;
 	margin-bottom: 0;
 	letter-spacing: 1px;
-	color: #008cff;
+	color: #f67f00;
 }
 
 .toggle-icon {
 	font-size: 22px;
 	cursor: pointer;
-	color: #008cff
+	color: #f67f00;
 }
 
 .topbar {
@@ -221,7 +221,7 @@ a {
 .sidebar-wrapper .metismenu a:active,
 .sidebar-wrapper .metismenu a:focus,
 .sidebar-wrapper .metismenu a:hover {
-	color: #008cff;
+	color: #f67f00;
     text-decoration: none;
     background-color: rgb(0 140 255 / 5%);
 }
@@ -343,7 +343,7 @@ a {
 	border-radius: 10px;
 	bottom: 20px;
 	right: 12px;
-	background-color: #008cff;
+	background-color: #f67f00;
 	z-index: 5
 }
 
@@ -541,7 +541,7 @@ a {
 }
 
 .fm-menu .list-group a:hover {
-	background: #008cff;
+	background: #f67f00;
 	color: #fff;
 	transition: all .2s ease-out
 }
@@ -921,7 +921,7 @@ form select.error:focus {
 .invoice header {
 	padding: 10px 0;
 	margin-bottom: 20px;
-	border-bottom: 1px solid #008cff
+	border-bottom: 1px solid #f67f00;
 }
 
 .invoice .company-details {
@@ -952,7 +952,7 @@ form select.error:focus {
 
 .invoice .invoice-details .invoice-id {
 	margin-top: 0;
-	color: #008cff
+	color: #f67f00;
 }
 
 .invoice main {
@@ -967,7 +967,7 @@ form select.error:focus {
 
 .invoice main .notices {
 	padding-left: 6px;
-	border-left: 6px solid #008cff;
+	border-left: 6px solid #f67f00;
 	background: #e7f2ff;
 	padding: 10px
 }
@@ -999,7 +999,7 @@ form select.error:focus {
 .invoice table td h3 {
 	margin: 0;
 	font-weight: 400;
-	color: #008cff;
+	color: #f67f00;
 	font-size: 1.2em
 }
 
@@ -1013,7 +1013,7 @@ form select.error:focus {
 .invoice table .no {
 	color: #fff;
 	font-size: 1.6em;
-	background: #008cff
+	background: #f67f00;
 }
 
 .invoice table .unit {
@@ -1021,7 +1021,7 @@ form select.error:focus {
 }
 
 .invoice table .total {
-	background: #008cff;
+	background: #f67f00;
 	color: #fff
 }
 
@@ -1044,9 +1044,9 @@ form select.error:focus {
 }
 
 .invoice table tfoot tr:last-child td {
-	color: #008cff;
+	color: #f67f00;
 	font-size: 1.4em;
-	border-top: 1px solid #008cff
+	border-top: 1px solid #f67f00;
 }
 
 .invoice table tfoot tr td:first-child {
@@ -1208,7 +1208,7 @@ form select.error:focus {
 
 .chat-tab-menu .nav-pills .nav-link.active,
 .chat-tab-menu .nav-pills .show>.nav-link {
-	color: #008cff;
+	color: #f67f00;
 	background-color: rgb(0 123 255 / 0%)
 }
 
@@ -1243,7 +1243,7 @@ form select.error:focus {
 }
 
 .chat-list .list-group-item.active {
-	background-color: rgb(13 110 253 / .12)
+	background-color: rgba(253, 129, 13, 0.12)
 }
 
 .chart-online {
@@ -1388,7 +1388,7 @@ form select.error:focus {
 }
 
 .email-navigation a.list-group-item.active {
-	color: #0b5ed7;
+	color: #f67f00;
 	font-weight: 600;
 	background-color: rgb(13 110 253 / .12)
 }
@@ -1408,7 +1408,7 @@ form select.error:focus {
 }
 
 .email-meeting a.list-group-item:hover {
-	background-color: rgb(0 123 255 / 15%);
+	background-color: rgba(255, 153, 0, 0.15);
 	transition: all .3s ease-out
 }
 
@@ -1503,8 +1503,8 @@ form select.error:focus {
 }
 
 .nav-primary.nav-tabs .nav-link.active {
-	color: #008cff;
-	border-color: #008cff #008cff #fff
+	color: #f67f00;
+	border-color: #f67f00 #f67f00 #fff
 }
 
 .nav-danger.nav-tabs .nav-link.active {
@@ -1600,10 +1600,10 @@ form select.error:focus {
     background: #6a11cb;
     background: -webkit-linear-gradient(
 	45deg
-	, #6a11cb, #2575fc)!important;
+	, #6a11cb, #f67f00)!important;
 		background: linear-gradient(
 	45deg
-	, #6a11cb , #2575fc)!important;
+	, #6a11cb , #f67f00)!important;
 }
 
 
@@ -1642,10 +1642,10 @@ form select.error:focus {
     background: #17ead9;
     background: -webkit-linear-gradient(
 45deg
-, #17ead9, #6078ea)!important;
+, #17ead9, #f67f00)!important;
     background: linear-gradient(
 45deg
-, #17ead9, #6078ea)!important;
+, #17ead9, #f67f00)!important;
 }
 
 
@@ -1683,7 +1683,7 @@ form select.error:focus {
 
 
 .bg-gradient-cosmic {
-	background: linear-gradient(to right, #8e2de2, #4a00e0)!important
+	background: linear-gradient(to right, #8e2de2, #f67f00)!important
 }
 
 .bg-gradient-burning {
@@ -1699,7 +1699,7 @@ form select.error:focus {
 }
 
 .bg-gradient-blues {
-	background: linear-gradient(to right, #56ccf2, #2f80ed)!important
+	background: linear-gradient(to right, #56ccf2, #f67f00)!important
 }
 
 .bg-gradient-moonlit {
@@ -1707,8 +1707,8 @@ form select.error:focus {
 }
 
 .split-bg-primary {
-	background-color: #0c62e0;
-	border-color: #0c62e0
+	background-color: #f67f00;
+	border-color: #f67f00;
 }
 
 .split-bg-secondary {
@@ -1722,8 +1722,8 @@ form select.error:focus {
 }
 
 .split-bg-info {
-	background-color: #0bb2d3;
-	border-color: #0bb2d3
+	background-color: #f67f00;
+	border-color: #f67f00;
 }
 
 .split-bg-warning {
@@ -1737,11 +1737,11 @@ form select.error:focus {
 }
 
 .bg-facebook {
-	background-color: #3b5998!important
+	background-color: #f67f00!important
 }
 
 .bg-twitter {
-	background-color: #55acee!important
+	background-color: #f67f00!important
 }
 
 .bg-google {
@@ -1858,21 +1858,21 @@ form select.error:focus {
 
 
 .btn-inverse-primary {
-	color: #008cff;
-    background-color: rgba(0, 140, 255, 0.18);
+	color: #f67f00;
+    background-color: rgba(255, 136, 0, 0.18);
     border-color: rgb(209, 234, 255);
 }
 
 .btn-inverse-primary:hover {
-	color: #008cff;
-    background-color: rgba(0, 140, 255, 0.18);
-    border-color: rgba(0, 140, 255, 0.18);
+	color: #f67f00;
+    background-color: rgba(255, 102, 0, 0.767);
+    border-color: rgba(255, 136, 0, 0.562);
 }
 
 .btn-inverse-primary:focus {
-	color: #008cff;
-    background-color: rgba(0, 140, 255, 0.18);
-    border-color: rgba(0, 140, 255, 0.18);
+	color: #f67f00;
+    background-color: rgba(255, 115, 0, 0.747);
+    border-color: rgba(255, 136, 0, 0.74);
 	box-shadow: 0 0 0 .25rem rgba(49, 132, 253, .3)
 }
 
@@ -2100,7 +2100,7 @@ input::placeholder {
 .topbar .navbar .navbar-nav .nav-link:hover,
 .topbar .navbar .navbar-nav .nav-link:focus {
 	background-color: #f2f9ff;
-    color: #008cff;
+    color: #f67f00;
 }
 
 .dropdown-toggle-nocaret:after {
@@ -2244,8 +2244,8 @@ input::placeholder {
 }
 
 .dropdown-large .msg-header-badge {
-	background-color: rgb(0 140 255 / 12%);
-    color: #008cff;
+	background-color: rgba(255, 136, 0, 0.74);
+    color: #f67f00;
     padding: 2px 8px;
     margin-bottom: 0;
     border-radius: 4px;
@@ -2395,7 +2395,7 @@ input::placeholder {
 }
 
 .dropdown-menu {
-	-webkit-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+	-webkit-box-shadow: 0 .5rem 1rem rgba(233, 149, 40, 0.205);
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 	border: 0 solid #e9ecef;
 	border-radius: 10px;
@@ -2474,7 +2474,7 @@ input::placeholder {
 	height: 40px;
 	line-height: 40px;
 	font-size: 24px;
-	background: #008cff;
+	background: #f67f00;
 	box-shadow: 0 .3rem .6rem rgba(0, 0, 0, .13);
 	color: #fff;
 	text-align: center;

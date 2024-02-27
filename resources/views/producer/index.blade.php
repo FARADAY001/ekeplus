@@ -9,8 +9,8 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <p class="mb-0 text-secondary"></p>
-                        <h4 class="my-1 text-info">4805</h4>
-                        <p class="mb-0 font-13">+2.5%</p>
+                        <h4 class="my-1 text-info"></h4>
+                        <p class="mb-0 font-13"></p>
                     </div>
                     <div class="widgets-icons-2 rounded-circle bg-gradient-blues text-white ms-auto"><i class='bx bxs-cart'></i>
                     </div>
@@ -23,8 +23,8 @@
            <div class="card-body">
                <div class="d-flex align-items-center">
                    <div>
-                       <p class="mb-0 text-secondary">Total</p>
-                       <h4 class="my-1 text-danger">84 245 FCFA</h4>
+                       <p class="mb-0 text-secondary"></p>
+                       <h4 class="my-1 text-danger"></h4>
                        <p class="mb-0 font-13"></p>
                    </div>
                    <div class="widgets-icons-2 rounded-circle bg-gradient-burning text-white ms-auto"><i class='bx bxs-wallet'></i>
@@ -39,7 +39,7 @@
                <div class="d-flex align-items-center">
                    <div>
                        <p class="mb-0 text-secondary"></p>
-                       <h4 class="my-1 text-success">34.6%</h4>
+                       <h4 class="my-1 text-success"></h4>
                        <p class="mb-0 font-13"></p>
                    </div>
                    <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i class='bx bxs-bar-chart-alt-2' ></i>
@@ -53,8 +53,8 @@
            <div class="card-body">
                <div class="d-flex align-items-center">
                    <div>
-                       <p class="mb-0 text-secondary">Total</p>
-                       <h4 class="my-1 text-warning">8.4K</h4>
+                       <p class="mb-0 text-secondary"></p>
+                       <h4 class="my-1 text-warning"></h4>
                        <p class="mb-0 font-13"></p>
                    </div>
                    <div class="widgets-icons-2 rounded-circle bg-gradient-orange text-white ms-auto"><i class='bx bxs-group'></i>
@@ -100,25 +100,25 @@
                 </div>
                 <div class="chart-container-1">
                     <canvas id="chart1"></canvas>
-                  </div>
+                </div>
               </div>
               <div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 g-0 row-group text-center border-top">
                 <div class="col">
                   <div class="p-3">
-                    <h5 class="mb-0">24.15M</h5>
-                    <small class="mb-0">Overall Visitor <span> <i class="bx bx-up-arrow-alt align-middle"></i> 2.43%</span></small>
+                    <h5 class="mb-0"></h5>
+                    <small class="mb-0"> <!-- <span> <i class="bx bx-up-arrow-alt align-middle"></i> </span>   -->  </small>
                   </div>
                 </div>
                 <div class="col">
                   <div class="p-3">
-                    <h5 class="mb-0">12:38</h5>
-                    <small class="mb-0">Visitor Duration <span> <i class="bx bx-up-arrow-alt align-middle"></i> 12.65%</span></small>
+                    <h5 class="mb-0"></h5>
+                    <small class="mb-0"> <!-- <span> <i class="bx bx-up-arrow-alt align-middle"></i> </span>   -->  </small>
                   </div>
                 </div>
                 <div class="col">
                   <div class="p-3">
-                    <h5 class="mb-0">639.82</h5>
-                    <small class="mb-0">Pages/Visit <span> <i class="bx bx-up-arrow-alt align-middle"></i> 5.62%</span></small>
+                    <h5 class="mb-0"></h5>
+                    <small class="mb-0"> <!-- <span> <i class="bx bx-up-arrow-alt align-middle"></i> </span>   -->  </small>
                   </div>
                 </div>
               </div>

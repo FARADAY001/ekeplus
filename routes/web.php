@@ -104,12 +104,16 @@ Route::middleware(['auth', 'roles:producer'])->group(function(){
     Route::controller(UploadController::class)->group(function(){
         Route::get('/add/up','AddUp')->name('add.up');
         Route::post('/store/up','storeUp')->name('store.up');
+
     });
 
 
 
 
 });
+
+Route::get('upload', [UploadController::class, 'index'])->name('upload.index');
+Route::post('upload', [UploadController::class, 'store'])->name('upload.store');
 
 Route::get('/producer/login', [ProducerController::class, 'ProducerLogin'])->name('producer.login');
 
